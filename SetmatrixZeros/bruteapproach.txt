@@ -1,0 +1,33 @@
+class Solution {
+public:
+    int store = INT_MIN+4534;
+    void setnegative(vector<vector<int>>&matrix , int indexi , int indexj){
+        for(int i=0 ; i<matrix.size() ; i++){
+            for(int j=0 ; j<matrix[0].size() ; j++){
+                if((indexi==i || indexj == j) && matrix[i][j] != 0){
+                    matrix[i][j]=store;
+                }
+            }
+        }
+    }
+    void setZeroes(vector<vector<int>>& matrix) {
+        for(int i=0 ; i<matrix.size() ; i++){
+            for(int j=0 ; j<matrix[0].size() ; j++){
+                if(matrix[i][j]==0){
+                    setnegative(matrix,i,j);
+                }
+            }
+        }
+        for(int i=0 ; i<matrix.size() ; i++){
+            for(int j=0 ; j<matrix[0].size() ; j++){
+                if(matrix[i][j]==store){
+                    matrix[i][j]=0;
+                }
+            }
+        }
+    }
+};
+
+
+set all the value of 1 as some integer using i and j of the zero element and 
+then set all the setted value as zero 
