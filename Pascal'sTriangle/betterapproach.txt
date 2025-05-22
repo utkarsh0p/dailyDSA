@@ -1,6 +1,0 @@
-<<<<<<< HEAD
-here
-=======
-here
->>>>>>> refs/remotes/origin/master
-second change
